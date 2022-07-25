@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  slates:
+      container_name: Name_of_the_container
+      env_file:
+        - ./.env
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      ports:
+        - "8000:8000"
+      expose:
+        - "8000"
+      volumes:
+        - ./
+      network_mode: "host"
+      privileged: true
